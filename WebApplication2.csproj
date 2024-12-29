@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminRegistration.aspx" />
+    <Content Include="CartUser.aspx" />
     <Content Include="css\animate.min.css" />
     <Content Include="css\bootstrap-grid.css" />
     <Content Include="css\bootstrap-grid.min.css" />
@@ -142,6 +143,13 @@
     </Compile>
     <Compile Include="AdminRegistration.aspx.designer.cs">
       <DependentUpon>AdminRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CartUser.aspx.cs">
+      <DependentUpon>CartUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CartUser.aspx.designer.cs">
+      <DependentUpon>CartUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductViewUser.aspx.cs">
       <DependentUpon>ProductViewUser.aspx</DependentUpon>
