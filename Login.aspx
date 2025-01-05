@@ -29,10 +29,10 @@
     <div class="col-sm-12">
         <div class="form">
              <h3>Login</h3>
-            <asp:TextBox ID="TextBox1" runat="server" placeholder="username" CssClass="input"></asp:TextBox>
-            <asp:TextBox ID="TextBox2" runat="server" placeholder="Password" CssClass="input"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server" placeholder="username" CssClass="input"  ></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*Enter Username"  ControlToValidate="TextBox1" CssClass="text-danger"></asp:RequiredFieldValidator>
+            <asp:TextBox ID="TextBox2" runat="server" placeholder="Password" CssClass="input"></asp:TextBox><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*Enter password" ControlToValidate="TextBox2" CssClass="text-danger"></asp:RequiredFieldValidator>
             <center><asp:Button ID="Button1" runat="server" Text="Login" class="el" OnClick="Button1_Click"/><br />
-                <asp:Label ID="Label1" runat="server" Text="" style="color:red;"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="" style="color:red;" ></asp:Label>
             </center>
         </div>
         

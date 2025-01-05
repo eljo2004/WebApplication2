@@ -14,11 +14,20 @@ namespace WebApplication2
         ConCl con=new ConCl();
         protected void Page_Load(object sender, EventArgs e)
         {
-            string c = "select * from Product_TB where CatId='" + Session["Cid"] +"'";
-            DataSet cc = con.Fnu_dataset(c);
-            DataList1.DataSource = cc.Tables[0];
-            DataList1.DataBind();
+            if (!IsPostBack)
+            {
+                string c = "select * from Product_TB where CatId='" + Session["Cid"] + "'";
+                DataSet cc = con.Fnu_dataset(c);
+                DataList1.DataSource = cc.Tables[0];
+                DataList1.DataBind();
+            }
+        }
 
+        protected void ImageButton1_Command(object sender, CommandEventArgs e)
+        {
+            int i = Convert.ToInt32(e.CommandArgument);
+            Session["Pid"] = i;
+            Response.Redirect("AddCartUser.aspx");
         }
     }
 }

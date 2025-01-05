@@ -2,6 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+                        <li><a href="UserHome.aspx">Home</a></li>
+                <li><a href="Cart.aspx">Cart</a></li>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     </asp:Content>
@@ -21,8 +23,8 @@
     </asp:DataList>
     <style>
         .l{
-            width:100%;
-            margin-left:8px;
+/*            width:100%;*/
+            margin-left:60px;
         }
         .s{
              border: 2px solid rgba(255, 255, 255, 0.1);

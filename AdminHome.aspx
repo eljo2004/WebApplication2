@@ -8,7 +8,7 @@
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-        <li><a href="HomePage.aspx">Home</a></li>
+        <li><a href="AdminHome.aspx">Home</a></li>
         <li><a href="Category.aspx">Category</a></li>
          <li><a href="Product.aspx">Product</a></li>
 

@@ -10,6 +10,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+            <li><a href="AdminHome.aspx">Home</a></li>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
             <div class="row">
@@ -70,9 +71,15 @@
             </asp:ImageField>
             <asp:BoundField DataField="CatDescription" HeaderText="Description" />
             <asp:BoundField DataField="CatStatus" HeaderText="Status" />
-            <asp:CommandField ShowSelectButton="True" />
-            <asp:CommandField ShowDeleteButton="True" />
-            <asp:CommandField ShowEditButton="True" />
+            <asp:CommandField ShowSelectButton="True" >
+            <ControlStyle CssClass="btn btn-info" />
+            </asp:CommandField>
+            <asp:CommandField ShowDeleteButton="True" >
+            <ControlStyle CssClass="btn btn-danger" />
+            </asp:CommandField>
+            <asp:CommandField ShowEditButton="True" >
+            <ControlStyle CssClass="btn btn-success" />
+            </asp:CommandField>
         </Columns>
     </asp:GridView>
     </asp:Content>

@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
+                        <li><a href="UserHome.aspx">Home</a></li>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
@@ -13,7 +14,7 @@
                 <tr>
                     <td rowspan="2">
                         <div class="s">
-                        <asp:ImageButton ID="ImageButton1" runat="server" Height="200px" Width="190px" ImageUrl='<%# Eval("ProductImage") %>' />
+                        <asp:ImageButton ID="ImageButton1" runat="server" Height="200px" Width="190px" ImageUrl='<%# Eval("ProductImage") %>' CommandArgument='<%# Eval("ProductId") %>' OnCommand="ImageButton1_Command" />
                         </div>
                     </td>
                     <td>

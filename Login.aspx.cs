@@ -25,6 +25,9 @@ namespace WebApplication2
                 }
                 else
                 {
+                    string r = "select RegId from Login_TB where Username='" + TextBox1.Text + "' and Password='" + TextBox2.Text + "'";
+                    string rr = con.Fnu_scalar(r);
+                    Session["Rid"]=rr;
                     Response.Redirect("UserHome.aspx");
                 }
             }

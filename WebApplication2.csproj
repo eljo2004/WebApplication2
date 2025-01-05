@@ -68,7 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminRegistration.aspx" />
-    <Content Include="CartUser.aspx" />
+    <Content Include="AddCartUser.aspx" />
+    <Content Include="Bill.aspx" />
+    <Content Include="Cart.aspx" />
     <Content Include="css\animate.min.css" />
     <Content Include="css\bootstrap-grid.css" />
     <Content Include="css\bootstrap-grid.min.css" />
@@ -144,12 +146,26 @@
     <Compile Include="AdminRegistration.aspx.designer.cs">
       <DependentUpon>AdminRegistration.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CartUser.aspx.cs">
-      <DependentUpon>CartUser.aspx</DependentUpon>
+    <Compile Include="AddCartUser.aspx.cs">
+      <DependentUpon>AddCartUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="CartUser.aspx.designer.cs">
-      <DependentUpon>CartUser.aspx</DependentUpon>
+    <Compile Include="AddCartUser.aspx.designer.cs">
+      <DependentUpon>AddCartUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bill.aspx.cs">
+      <DependentUpon>Bill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bill.aspx.designer.cs">
+      <DependentUpon>Bill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductViewUser.aspx.cs">
       <DependentUpon>ProductViewUser.aspx</DependentUpon>

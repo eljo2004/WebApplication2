@@ -30,7 +30,7 @@ namespace WebApplication2
                 int newregid=Convert.ToInt32(ss);
                 regid = newregid + 1;
             }
-            string reg="insert into Admin_TB values("+regid+",'"+TextBox1.Text+"','"+TextBox2.Text+"','"+TextBox3.Text+"','"+TextBox4.Text+"','"+TextBox5.Text+"')";
+            string reg="insert into Admin_TB values("+regid+",'"+TextBox1.Text+"','"+TextBox2.Text+"','"+TextBox3.Text+"','"+TextBox4.Text+"','Avilable')";
             int reg1 = con.Fnu_NonQuery(reg);
             if(reg1 == 1)
             {
