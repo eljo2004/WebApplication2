@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -16,7 +17,16 @@ namespace WebApplication2
         {
             if (!IsPostBack)
             {
-                cart();   
+                string dis = "select count(CartId) from Cart_TB where RegId='" + Session["Rid"] +"'";
+                string cdis=con.Fnu_scalar(dis);
+                if (cdis != "0")
+                {
+                    cart();
+                }
+                else
+                {
+                    Response.Redirect("Bill.aspx");
+                }
             }
 
         }
@@ -91,14 +101,52 @@ namespace WebApplication2
             string dt = DateTime.Now.ToString("yyyy-MM-dd");
             string s = "select sum(SubTotal) from Cart_TB where RegId='" + Session["Rid"] +"'";
             string tot= con.Fnu_scalar(s);
-            Session["Gtotal"]= tot; 
+            Session["Gtotal"]= tot;
+            List<string> list = new List<string>();
 
-            string b = "insert into Bill_TB values(" + tot + ",'"+dt+"'," + Session["Rid"] +","+tot+",'onprogress')";
-            int bb = con.Fnu_NonQuery(b);
+            if (tot!= "")
+            {
 
-            string d = "delete from Cart_TB where RegId='" + Session["Rid"] + "'";
 
-            Response.Redirect("Bill.aspx");
+                string d = "select p.ProductId, p.ProductName,c.SubTotal,c.Quantity from Product_TB p,Cart_TB c where c.RegId='" + Session["Rid"] + "' and c.ProductId=p.ProductId";
+                SqlDataReader dd = con.Fnu_reader(d);
+                while (dd.Read())
+                {
+                    int id = Convert.ToInt32(dd["ProductId"]);
+                    string name = dd["ProductName"].ToString();
+                    int q = Convert.ToInt32(dd["Quantity"]);
+                    int price = Convert.ToInt32(dd["SubTotal"]);
+                    string o = "insert into Order_TB values(" + id + ",'" + name + "'," + q + ",'" + dt + "'," + price + "," + Session["Rid"] + ",'Pending')";
+                    //con.Fnu_NonQuery(o);
+                    list.Add(o);
+
+                }
+                foreach(var x in list)
+                {
+                    con.Fnu_NonQuery(x);
+                }
+
+                string b = "insert into Bill_TB values(" + tot + ",'" + dt + "'," + Session["Rid"] + "," + tot + ",'Pending')";
+                int bb = con.Fnu_NonQuery(b);
+
+                string cart = "delete from Cart_TB where RegId='" + Session["Rid"] + "'";
+                con.Fnu_NonQuery(cart);
+
+                Response.Redirect("Bill.aspx");
+            }
+            else
+            {
+                string sta="select count(BillStatus) from Bill_TB where BillStatus='Pending' and UserId=" + Session["Rid"] +"";
+                string j=con.Fnu_scalar(sta);
+                if (j != "0")
+                {
+                    Response.Redirect("Bill.aspx");
+                }
+                else
+                {
+                    Response.Redirect("Vieworder.aspx");
+                }
+            }
         }
 
       

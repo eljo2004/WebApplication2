@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication2
 {
-    public partial class WebForm3 : System.Web.UI.Page
+    public partial class EnterAccount : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,7 +16,7 @@ namespace WebApplication2
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Login.aspx");
+
         }
     }
 }

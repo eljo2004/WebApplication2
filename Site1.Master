@@ -41,6 +41,10 @@
       <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <style>
+        .b{
+            background-color:#dbb418;
+        }
+
          .form {
    min-height: 300px;
 /*   min-width:350px;*/
@@ -185,6 +189,18 @@
       </div>
    </div>
    <!-- logo section end -->
+
+     <!-- header section start -->
+ <div class="header_section">
+    <div class="container">
+       <div class="containt_main">
+           <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
+
+</asp:ContentPlaceHolder>
+
+       </div>
+    </div>
+ </div>
   
    <!-- banner section start -->
    <div class="banner_section layout_padding">

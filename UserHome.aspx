@@ -1,11 +1,51 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="UserHome.aspx.cs" Inherits="WebApplication2.UserHome" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master"  AutoEventWireup="true" CodeBehind="UserHome.aspx.cs"  Inherits="WebApplication2.UserHome" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder3" runat="server">
-                        <li><a href="UserHome.aspx">Home</a></li>
-                <li><a href="Cart.aspx">Cart</a></li>
+                   
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+             <div class="banner_section layout_padding">
+   <div class="container">
+      <div id="my_slider" class="carousel slide" data-ride="carousel">
+         <div class="carousel-inner">
+            <div class="carousel-item active">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                     <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="carousel-item">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                     <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="carousel-item">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                     <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+         <i class="fa fa-angle-left"></i>
+         </a>
+         <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+         <i class="fa fa-angle-right"></i>
+         </a>
+      </div>
+   </div>
+</div>
+  
     </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
@@ -38,7 +78,80 @@
         .m{
             overflow-wrap:anywhere
         }
+         .lo{
+              background-color:#111111;
+              border-radius: 5px;
+              cursor: pointer;
+              color: #fff;
+         }
+         .lo:hover{
+           background: #f26522;
+           color: #000000;
+
+         }
+
     </style>
 
    
 </asp:Content>
+<asp:Content ID="Content5" runat="server" contentplaceholderid="ContentPlaceHolder4">
+      <!-- header section start -->
+
+      <script>
+          function re() {
+              location.reload();
+          }
+      </script>
+
+  <div class="header_section">
+     <div class="container">
+        <div class="containt_main">
+           <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <a href="UserHome.aspx">Home</a>
+              <a href="Cart.aspx">Cart</a>
+              <a href="Vieworder.aspx">View Order</a>
+            <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-user" aria-hidden="true"></i>
+                    <span class="padding_10">Account</span></button>
+                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color:#111111;">       
+                <a class="" href="#">Edit</a>
+                <a class="" href="Login.aspx">
+                    <asp:Button ID="Button2" runat="server" Text="Logout" CssClass="lo" OnClick="Button2_Click" OnClientClick="re()" />
+                </a>       
+            </div>
+            </div>
+           </div>
+           <span class="toggle_icon" onclick="openNav()"><img src="images/toggle-icon.png"></span>
+         
+           <div class="main">
+              <!-- Another variation with a button -->
+              <div class="input-group">
+                 <input type="text" class="form-control" placeholder="Search here">
+                 <div class="input-group-append">
+                   
+                     <div>
+                         <asp:Button ID="Button1" runat="server" Text="Search" class="btn btn-secondary" style="background-color: #f26522; border-color:#f26522 "/>
+                     </div>
+                 </div>
+              </div>
+           </div>
+           <div class="header_box">
+            
+              <div class="login_menu">
+                 <ul>
+                    <li><a href="Cart.aspx">
+                       <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                       <span class="padding_10">Cart</span></a>
+                    </li>
+                   
+                 </ul>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+      
+  <!-- header section end -->
+</asp:Content>
+

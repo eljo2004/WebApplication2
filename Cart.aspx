@@ -17,8 +17,8 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:DataList ID="DataList1" runat="server" OnItemCommand="DataList1_ItemCommand" Width="50%" >
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" ><div class="b">
+    <asp:DataList ID="DataList1" runat="server" OnItemCommand="DataList1_ItemCommand" Width="50%" CssClass=" m-3" >
         <ItemTemplate>
             <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("ProductImage") %>' Height="200px" Width="190px" />
             <asp:Button ID="Button1" runat="server" Text="Delete" CommandArgument='<%# Eval("CartId") %>'  CommandName="Delete" /> <asp:Button ID="Button2" runat="server" Text="Edit" CommandArgument='<%# Eval("CartId") %>' CommandName="Edit" />
@@ -66,7 +66,7 @@
  </table><br />
         </ItemTemplate>
     </asp:DataList>
-    <asp:Button ID="Button5" runat="server" Text="Order" OnClick="Button5_Click1"/>
+    <asp:Button ID="Button5" runat="server" Text="Continue" OnClick="Button5_Click1" CssClass="m-3"/>
     <script>
         //function fun() {
         //    var txt
@@ -78,4 +78,5 @@
         //    }
         //}
     </script>
+    </div>
 </asp:Content>

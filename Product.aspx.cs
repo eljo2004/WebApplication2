@@ -86,7 +86,7 @@ namespace WebApplication2
             int getind = Convert.ToInt32(GridView1.DataKeys[i].Value);
             TextBox txtdescription = (TextBox)GridView1.Rows[i].Cells[5].Controls[0];
             TextBox txtstatus = (TextBox)GridView1.Rows[i].Cells[6].Controls[0];
-            string u = "update Product_TB set ProductDescription='" + txtdescription.Text + "' ,ProductStatus='" + txtstatus.Text + "'";
+            string u = "update Product_TB set ProductDescription='" + txtdescription.Text + "' ,ProductStatus='" + txtstatus.Text + "' where ProductId='"+getind+"'";
             con.Fnu_NonQuery(u);
 
             GridView1.EditIndex = -1;

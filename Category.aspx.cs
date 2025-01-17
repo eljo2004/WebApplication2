@@ -75,7 +75,7 @@ namespace WebApplication2
             int getind = Convert.ToInt32(GridView1.DataKeys[i].Value);
             TextBox txtdescription = (TextBox)GridView1.Rows[i].Cells[3].Controls[0];
             TextBox txtstatus = (TextBox)GridView1.Rows[i].Cells[4].Controls[0];
-            string u = "update Category_TB set CatDescription='"+txtdescription.Text+"' ,CatStatus='"+txtstatus.Text+"'";
+            string u = "update Category_TB set CatDescription='"+txtdescription.Text+"' ,CatStatus='"+txtstatus.Text+"' where CategoryId='"+getind+"'";
             con.Fnu_NonQuery(u);
 
             GridView1.EditIndex = -1;

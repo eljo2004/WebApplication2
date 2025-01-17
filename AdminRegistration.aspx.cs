@@ -37,7 +37,7 @@ namespace WebApplication2
                 string log = "insert into Login_TB values("+regid+",'"+TextBox6.Text+"','"+TextBox7.Text+"','Admin')";
                 int log1 = con.Fnu_NonQuery(log);
                 Label1.Text = "Registration sucessfull";
-                Response.Redirect("AdminRegistration.aspx");
+                Response.Redirect("Login.aspx");
             }
             else
             {

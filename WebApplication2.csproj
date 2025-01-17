@@ -44,6 +44,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -71,6 +73,13 @@
     <Content Include="AddCartUser.aspx" />
     <Content Include="Bill.aspx" />
     <Content Include="Cart.aspx" />
+    <None Include="Connected Services\ServiceReference5\Service.disco" />
+    <None Include="Connected Services\ServiceReference5\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference5\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference5\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="css\animate.min.css" />
     <Content Include="css\bootstrap-grid.css" />
     <Content Include="css\bootstrap-grid.min.css" />
@@ -92,6 +101,7 @@
     <Content Include="css\slick.css" />
     <Content Include="css\style.css" />
     <Content Include="electronic.html" />
+    <Content Include="EnterAccount.aspx" />
     <Content Include="fashion.html" />
     <Content Include="images\banner-bg.png" />
     <Content Include="images\call-icon.png" />
@@ -128,8 +138,11 @@
     <Content Include="js\plugin.js" />
     <Content Include="js\popper.min.js" />
     <Content Include="js\slider-setting.js" />
+    <Content Include="Payment.aspx" />
     <Content Include="ProductViewUser.aspx" />
     <Content Include="UserHome.aspx" />
+    <Content Include="ViewFeedback.aspx" />
+    <Content Include="Vieworder.aspx" />
     <Content Include="Web.config" />
     <Content Include="HomePage.aspx" />
     <Content Include="Login.aspx" />
@@ -166,6 +179,25 @@
     </Compile>
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReference5\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="EnterAccount.aspx.cs">
+      <DependentUpon>EnterAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EnterAccount.aspx.designer.cs">
+      <DependentUpon>EnterAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductViewUser.aspx.cs">
       <DependentUpon>ProductViewUser.aspx</DependentUpon>
@@ -231,6 +263,20 @@
     <Compile Include="UserRegistration.aspx.designer.cs">
       <DependentUpon>UserRegistration.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ViewFeedback.aspx.cs">
+      <DependentUpon>ViewFeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewFeedback.aspx.designer.cs">
+      <DependentUpon>ViewFeedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vieworder.aspx.cs">
+      <DependentUpon>Vieworder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vieworder.aspx.designer.cs">
+      <DependentUpon>Vieworder.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\.DS_Store" />
@@ -246,6 +292,19 @@
     <Content Include="js\bootstrap.bundle.min.js.map" />
     <Content Include="js\bootstrap.js.map" />
     <Content Include="js\bootstrap.min.js.map" />
+    <None Include="Connected Services\ServiceReference5\Service.wsdl" />
+    <None Include="Connected Services\ServiceReference5\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference5\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference5\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ServiceReference5\WebApplication2.ServiceReference5.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
@@ -265,6 +324,12 @@
     <Folder Include="CategoryImg\" />
     <Folder Include="ProductImg\" />
     <Folder Include="UserImg\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference5\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

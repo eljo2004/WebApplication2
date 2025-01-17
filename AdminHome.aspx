@@ -11,6 +11,6 @@
         <li><a href="AdminHome.aspx">Home</a></li>
         <li><a href="Category.aspx">Category</a></li>
          <li><a href="Product.aspx">Product</a></li>
-
-
+             <li><a href="ViewFeedback.aspx">View Feedback</a></li>
+    <asp:Button ID="Button1" runat="server" Text="Logout" OnClick="Button1_Click" />
 </asp:Content>
