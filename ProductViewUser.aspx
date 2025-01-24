@@ -5,6 +5,75 @@
                         <li><a href="UserHome.aspx">Home</a></li>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <style>
+        .q{
+           margin-top:100px;
+        }
+        .v{
+            margin-bottom:70px;
+        }
+    </style>
+
+      <div id="my_slider" class="carousel slide v" data-ride="caroyyyyyusel">
+         <div class="carousel-inner ">
+            <div class="carousel-item active">
+               <div class="row v">
+                  <div class="col-sm-12 ">
+                     <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                     <%--<div class="buynow_bt"><a href="#">Buy Now</a></div>--%>
+                  </div>
+               </div>
+            </div>
+               <%
+              List<string> myList = new List<string>();
+              myList = (List<string>)Session["i"];
+              foreach (var x in myList)
+              {
+                  ImageButton2.ImageUrl = x.ToString();
+              %>
+
+            <div class="carousel-item ">
+                <center>
+                     <div class="BG">
+                          <div class="row">
+                             <div class="col-sm-12">
+                                <center><asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="" Height="290px" Width="250px" CssClass="m-1" /></center>
+                                <%--<div class="buynow_bt"><a href="#">Buy Now</a></div>--%>
+                             </div>
+                         </div>
+                     </div>
+                </center>
+       
+     
+           </div>
+
+          <% } %>
+          <%--  <div class="carousel-item">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                     <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="carousel-item">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                     <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                  </div>
+               </div>
+            </div>--%>
+         </div>
+         <a class="carousel-control-prev q" href="#my_slider" role="button" data-slide="prev">
+         <i class="fa fa-angle-left"></i>
+         </a>
+         <a class="carousel-control-next q" href="#my_slider" role="button" data-slide="next">
+         <i class="fa fa-angle-right"></i>
+         </a>
+      </div>
+    
+
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 

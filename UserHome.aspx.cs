@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
@@ -14,6 +15,8 @@ namespace WebApplication2
     public partial class UserHome : System.Web.UI.Page
     {
         ConCl con=new ConCl();
+        List<string> list = new List<string>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack) 
@@ -26,6 +29,17 @@ namespace WebApplication2
                     DataList1.DataSource = ds.Tables[0];
 
                     DataList1.DataBind();
+
+                    string i = "select CatImage from Category_TB ";
+                    SqlDataReader dr = con.Fnu_reader(i);
+                    while (dr.Read())
+                    {
+                        string ii = dr["CatImage"].ToString();
+                        list.Add(ii);
+                    }
+
+                    Session["y"] = list;
+
                 }
                 else
                 {
@@ -49,6 +63,17 @@ namespace WebApplication2
             FormsAuthentication.SignOut();
             Response.Redirect("Login.aspx");
 
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            string ss = Request.Form["search"].ToString();
+
+            string c = "select * from Category_TB where CatName='" + ss + "'";
+            DataSet dd=con.Fnu_dataset(c);  
+            DataList1.DataSource=dd.Tables[0];
+            DataList1.DataBind();
 
         }
     }

@@ -42,6 +42,7 @@
     </asp:ContentPlaceHolder>
     <style>
         .b{
+            padding-top:10px;
             background-color:#dbb418;
         }
 
@@ -149,11 +150,25 @@
    color: red;
    background-color: rgb(215, 207, 193);
  }  
+ .BG{
+     padding:10px;
+     margin-right:50px;
+     margin-top:1px;
+     margin-left:50px;
+     position:relative;
+        backdrop-filter: blur(15px);
+
+     border: 0px solid rgba(255, 255, 255, 0.1);
+/* box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);*/
+        background-color:rgba(255, 255, 255, 0.27);
+ }
+
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-                <!-- banner bg main start -->
+<!-- banner bg main start -->
 <div class="banner_bg_main">
    <!-- header top section start -->
    <div class="container">
@@ -196,7 +211,7 @@
        <div class="containt_main">
            <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
 
-</asp:ContentPlaceHolder>
+           </asp:ContentPlaceHolder>
 
        </div>
     </div>
@@ -223,7 +238,7 @@
         <!-- footer section start -->
 <div class="footer_section layout_padding">
    <div class="container">
-      <div class="footer_logo"><a href="index.html"><img src="images/footer-logo.png"></a></div>
+      <div class="footer_logo m-3"><a href="index.html"><img src="images/footer-logo.png"></a></div>
       <div class="input_bt">
          <input type="text" class="mail_bt" placeholder="Your Email" name="Your Email">
          <span class="subscribe_bt" id="basic-addon2"><a href="#">Subscribe</a></span>

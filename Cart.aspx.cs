@@ -10,6 +10,8 @@ using System.Web.UI.WebControls;
 
 namespace WebApplication2
 {
+
+
     public partial class Cart : System.Web.UI.Page
     {
         ConCl con=new ConCl();
@@ -40,6 +42,8 @@ namespace WebApplication2
             DataList1.DataBind();
             
         }
+
+
         protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
         {
             Label qty = (Label)e.Item.FindControl("Label8");
@@ -96,6 +100,8 @@ namespace WebApplication2
         //    //string s="select u.UserName,u.UserEmail,u.UserPhone,u.UserAddress,c.Quantity,c."
         //}
 
+      
+
         protected void Button5_Click1(object sender, EventArgs e)
         {
             string dt = DateTime.Now.ToString("yyyy-MM-dd");
@@ -112,20 +118,21 @@ namespace WebApplication2
                 SqlDataReader dd = con.Fnu_reader(d);
                 while (dd.Read())
                 {
-                    int id = Convert.ToInt32(dd["ProductId"]);
+                     int ID = Convert.ToInt32(dd["ProductId"]);
                     string name = dd["ProductName"].ToString();
-                    int q = Convert.ToInt32(dd["Quantity"]);
+                    int Qty = Convert.ToInt32(dd["Quantity"]);
                     int price = Convert.ToInt32(dd["SubTotal"]);
-                    string o = "insert into Order_TB values(" + id + ",'" + name + "'," + q + ",'" + dt + "'," + price + "," + Session["Rid"] + ",'Pending')";
+                    string o = "insert into Order_TB values(" + ID + ",'" + name + "'," + Qty + ",'" + dt + "'," + price + "," + Session["Rid"] + ",'Pending')";
                     //con.Fnu_NonQuery(o);
                     list.Add(o);
+                 
 
                 }
                 foreach(var x in list)
                 {
                     con.Fnu_NonQuery(x);
                 }
-
+               
                 string b = "insert into Bill_TB values(" + tot + ",'" + dt + "'," + Session["Rid"] + "," + tot + ",'Pending')";
                 int bb = con.Fnu_NonQuery(b);
 
@@ -144,7 +151,7 @@ namespace WebApplication2
                 }
                 else
                 {
-                    Response.Redirect("Vieworder.aspx");
+                    Response.Redirect("ProductViewUser.aspx");
                 }
             }
         }

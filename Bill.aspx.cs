@@ -112,6 +112,15 @@ namespace WebApplication2
            
         }
 
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            string d="delete from Bill_TB where UserId=" + Session["Rid"] +"  and  BillStatus='Pending'";
+            con.Fnu_NonQuery(d);
+            string dd = "delete from Order_TB where RegId=" + Session["Rid"] +" and OrderStatus='Pending'";
+            con.Fnu_NonQuery(dd);
+            Response.Redirect("Bill.aspx");
+        }
+
         //protected void Button1_Click(object sender, EventArgs e)
         //{
         //    Response.Redirect("EnterAccount.aspx");

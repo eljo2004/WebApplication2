@@ -15,8 +15,8 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <asp:Image ID="Image1" runat="server" Height="200px" Width="190px" /><br />
-    <table>
+        <asp:Image ID="Image1" runat="server" Height="200px" Width="190px" CssClass="ml-2" /><br />
+    <table class="ml-2">
         <tr>
             <td class="auto-style1">
                     <asp:Label ID="Label1" runat="server" Text="Product :"></asp:Label>
@@ -50,5 +50,6 @@
             </td>
         </tr>
     </table><br />
-    <asp:Button ID="Button1" runat="server" Text="ADD CART" OnClick="Button1_Click" />
+    <asp:Button ID="Button1" runat="server" Text="ADD CART" OnClick="Button1_Click"  CssClass="ml-2"/>
+        <asp:Button ID="Button4" runat="server" Text="Buy Now" CssClass="mr-10" OnClick="Button4_Click" />
 </asp:Content>

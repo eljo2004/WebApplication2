@@ -137,9 +137,10 @@ color: #0c0c0c;
                       <asp:BoundField DataField="Price" HeaderText="Price" />
                   </Columns>
               </asp:GridView><br />
-              <script src="XMLFile1.xml"></script>
               <div style="text-align:right;" class="auto-style4"> <b class="auto-style3"><asp:Label ID="Label12" runat="server" Text="Grand Total :"></asp:Label>          <asp:Label ID="Label11" runat="server" Text=""></asp:Label></b>
               <br /><br />
+                 
+                  <asp:Button ID="Button3" runat="server" Text="Delete"  CssClass="btn btn-danger " OnClick="Button3_Click"/>
                  
                   <asp:Button ID="Button1" runat="server" Text="Payment" OnClick="Button1_Click" CssClass="btn btn-success" />
 

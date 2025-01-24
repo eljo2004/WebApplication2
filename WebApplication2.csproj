@@ -185,6 +185,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Dictionary.cs" />
     <Compile Include="EnterAccount.aspx.cs">
       <DependentUpon>EnterAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -199,6 +200,7 @@
     <Compile Include="Payment.aspx.designer.cs">
       <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PidCls.cs" />
     <Compile Include="ProductViewUser.aspx.cs">
       <DependentUpon>ProductViewUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

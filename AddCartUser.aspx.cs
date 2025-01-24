@@ -61,5 +61,19 @@ namespace WebApplication2
                 Label8.Text = q.ToString();
             }
         }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            int sub = 0;
+            string p = "select Price from Product_TB where ProductId='" + Session["Pid"] + "'";
+            string pp = con.Fnu_scalar(p);
+
+            sub = Convert.ToInt32(pp) * Convert.ToInt32(Label8.Text);
+
+            string c = "insert into Cart_TB values(" + Session["Rid"] + "," + Session["Pid"] + "," + Label8.Text + "," + sub + ") ";
+            con.Fnu_NonQuery(c);
+
+            Response.Redirect("Cart.aspx");
+        }
     }
 }
