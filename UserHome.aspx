@@ -6,7 +6,7 @@
                    
 
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+<%--<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <style>
         .q{
            margin-top:100px;
@@ -42,7 +42,6 @@
                           <div class="row">
                              <div class="col-sm-12">
                                 <center><asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="" Height="290px" Width="250px" CssClass="m-1" /></center>
-                                <%--<div class="buynow_bt"><a href="#">Buy Now</a></div>--%>
                              </div>
                          </div>
                      </div>
@@ -52,22 +51,7 @@
            </div>
 
           <% } %>
-          <%--  <div class="carousel-item">
-               <div class="row">
-                  <div class="col-sm-12">
-                     <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
-                     <div class="buynow_bt"><a href="#">Buy Now</a></div>
-                  </div>
-               </div>
-            </div>
-            <div class="carousel-item">
-               <div class="row">
-                  <div class="col-sm-12">
-                     <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
-                     <div class="buynow_bt"><a href="#">Buy Now</a></div>
-                  </div>
-               </div>
-            </div>--%>
+         
          </div>
          <a class="carousel-control-prev q" href="#my_slider" role="button" data-slide="prev">
          <i class="fa fa-angle-left"></i>
@@ -78,25 +62,105 @@
       </div>
     
 
+</asp:Content>--%>
+
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+<div id="my_slider" class="carousel slide v" data-ride="carousel">
+   <div class="carousel-inner">
+      <div class="carousel-item active">
+         <div class="row">
+            <div class="col-sm-12 o">
+               <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+               <div class="buynow_bt"><a href="#">Buy Now</a></div>
+            </div>
+         </div>
+      </div>
+      <%
+        List<string> myList = new List<string>();
+        myList = (List<string>)Session["y"];
+        foreach (var x in myList)
+        {
+            ImageButton2.ImageUrl = x.ToString();
+        %>
+
+        <div class="carousel-item ">
+            <center>
+               <div class="BG">
+                    <div class="row">
+                       <div class="col-sm-12">
+                          <center><asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="" Height="290px" Width="250px" CssClass="m-1" /></center>
+                       </div>
+                   </div>
+               </div>
+            </center>
+       
+     
+        </div>
+
+        <% } %>
+    </div>
+     <a class="carousel-control-prev q" href="#my_slider" role="button" data-slide="prev">
+     <i class="fa fa-angle-left"></i>
+     </a>
+     <a class="carousel-control-next q" href="#my_slider" role="button" data-slide="next">
+     <i class="fa fa-angle-right"></i>
+     </a>
+</div>
+
+ <style>
+     .q{
+        margin-top:100px;
+     }
+     .v{
+/*         margin-bottom:60px;*/
+         margin-top:30px;
+     }
+     .o{
+         height:326.5100px;
+     }
+ </style>
+
+
 </asp:Content>
+
+
+
+
 <asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   
-    <asp:DataList ID="DataList1" runat="server" RepeatColumns="4" BorderWidth="0px" CellSpacing="10" CssClass="l" DataKeyField="CatId" >
-        <ItemTemplate >
-            <div class="s">
-              <center>  <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("CatImage") %>' Height="250px" Width="250px" CommandArgument='<%# Eval("CatId") %>' OnCommand="ImageButton1_Command" /></center><br />
-               <b><asp:Label ID="Label1" runat="server" Text='<%# Eval("CatName") %>' onclick="ImageButton1_Click"></asp:Label></b><br />
-                <asp:Label ID="Label2" runat="server" Text='<%# Eval("CatDescription") %>' Width="250px" CssClass="m" onclick="ImageButton1_Click"></asp:Label>
-                <br />
+ <!-- fashion section start -->
+ <div class="fashion_section">
+    <div id="main_slider" class="carousel slide" data-ride="carousel">
+       <div class="carousel-inner">
+          <div class="carousel-item active">
+             <div class="container">
+                <h1 class="fashion_taital">Category</h1>
+                <div class="fashion_section_2">
+                       <asp:DataList ID="DataList1"   runat="server" RepeatColumns="3" BorderWidth="0px" CellSpacing="10"  DataKeyField="CatId" >
+                         <ItemTemplate >
+                             <div class="s">
+                               <center>  <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl='<%# Eval("CatImage") %>' Height="250px" Width="250px" CommandArgument='<%# Eval("CatId") %>' OnCommand="ImageButton1_Command" /></center><br />
+                                <b><asp:Label ID="Label1" runat="server" Text='<%# Eval("CatName") %>' onclick="ImageButton1_Click"></asp:Label></b><br />
+                                 <asp:Label ID="Label2" runat="server" Text='<%# Eval("CatDescription") %>' Width="250px" CssClass="m" onclick="ImageButton1_Click"></asp:Label>
+                                 <br />
+                                 </div>
+
+                         </ItemTemplate>
+
+ </asp:DataList>
+                   
                 </div>
-
-        </ItemTemplate>
-
-    </asp:DataList>
+             </div>
+          </div>
+       </div>
+    </div>
+</div>
+   
     <style>
         .l{
 /*            width:100%;*/
-            margin-left:60px;
+/*            margin-left:60px;*/
+                max-width:1000px;
         }
         .s{
              border: 2px solid rgba(255, 255, 255, 0.1);
@@ -108,7 +172,8 @@
             width: 250px;
         }
         .m{
-            overflow-wrap:anywhere
+            overflow-wrap:anywhere;
+                max-width:250px;
         }
          .lo{
               background-color:#111111;
@@ -123,15 +188,12 @@
          }
 
     </style>
-
    
 </asp:Content>
 <asp:Content ID="Content5" runat="server" contentplaceholderid="ContentPlaceHolder4">
       <!-- header section start -->
 
-  <div class="header_section">
-     <div class="container">
-        <div class="containt_main">
+ 
            <div id="mySidenav" class="sidenav">
               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
               <a href="UserHome.aspx">Home</a>
@@ -174,9 +236,7 @@
                  </ul>
               </div>
            </div>
-        </div>
-     </div>
-  </div>
+
       
   <!-- header section end -->
 </asp:Content>
